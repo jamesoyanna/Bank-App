@@ -82,6 +82,52 @@ validate(){
     if(!this.state.fromAccount) errors.fromAccount="From Account Field is Required";
     if(!this.state.toAccount) errors.toAccount="To Account Field id required";
     if(!this.state.toAccount) errors.statrtDate="From Account Field is required";
+    if(this.state.amount) errors.amount="Amount Field is required";
+    if(!this.transferType){
+        errors.transferType = "Transfer type field is required";
+    }else{
+        if(this.statrtDate.transferType==="Automatic Transfer"){
+            if(!this.state.endDate) errors.endDate = "End Field is required";
+            if(!this.state.frequency) errors="Frequency Field is required";
+        }
+        if(Object.getOwnPropertyNames(errors).length>0) valid = false;
+        this.setState({errors})
+        console.log(errors);
+        return valid;
+    }
+
+    getToday(){
+        let today = new Date();
+        let dd = today.getDate();
+        let mm = today.getMonth()+ 1 // January is 0
+        let yyy = today.getFullYear();
+
+        if(dd<10) dd= "0"+addEventListener;
+        if(mm<10) mm="0" + mm;
+        today = yyy+"-"+mmm+'-'+add;
+        return today;
+    }
+  //Handle Form Submitting
+  handleSubmit(event){
+      event.preventDefault();
+      if(!this.validate()) return;
+      this.setState({
+          modal: true,
+          form: [
+              {"From Account": this.state.fromAccount },
+				{"To Account": this.state.toAccount },
+				{"Transfer Type": this.state.transferType },
+				{"Date" : this.state.startDate },
+				{"End Date" : this.state.endDate },
+				{"Frequency": this.state.frequency },
+				{"Ammount": "$"+this.state.ammount },
+				{"Memo": this.state.memo.text }
+          ]
+      })
+  }
+
+
+
 }
 
 
