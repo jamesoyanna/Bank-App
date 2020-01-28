@@ -80,7 +80,8 @@ validate(){
     let errors = {};
     let valid = true;
     if(!this.state.fromAccount) errors.fromAccount="From Account Field is Required";
-    if(!this.state.toAccount)
+    if(!this.state.toAccount) errors.toAccount="To Account Field id required";
+    if(!this.state.toAccount) errors.statrtDate="From Account Field is required";
 }
 
 
