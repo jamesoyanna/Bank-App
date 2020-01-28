@@ -13,8 +13,18 @@ const Navbar = (props) => {
             <div className="title">Investement Bank</div>
             <ul>
                 <li>
-                    <label htmlFor="chkMenu" onClick={()=props.setRoute("profile")}>
+                    <label htmlFor="chkMenu" onClick={()=>props.setRoute("profile")}>
                         Transfer Activity
+                    </label>
+                </li>
+                <li>
+                <label htmlFor="chkMenu" onClick= {()=>props.setRoute("form")}>
+                    Transactions
+                </label>
+                </li>
+                <li>
+                    <label htmlFor="chkMenu"onClick={()=>props.setRoute("contact")}>
+                        Contact
                     </label>
                 </li>
             </ul>
