@@ -10,7 +10,14 @@ const Navbar = (props) => {
         </div>
         <input type="checkbox" id="chkMenu" />
         <nav className="menu">
-            <div className="title"
+            <div className="title">Investement Bank</div>
+            <ul>
+                <li>
+                    <label htmlFor="chkMenu" onClick={()=props.setRoute("profile")}>
+                        Transfer Activity
+                    </label>
+                </li>
+            </ul>
         </nav>
       </div>
     );
